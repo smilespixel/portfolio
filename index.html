@@ -72,17 +72,22 @@
    2. BASE
    ========================================================= */
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%; scrollbar-width:thin; scrollbar-color:rgba(var(--ink-rgb),.25) transparent}
 body{
   margin:0; position:relative; overflow-x:clip;
   background:var(--bg); color:var(--ink);
   font:400 16px/1.6 'Inter',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-h1,h2,h3{margin:0; font-family:'Space Grotesk',sans-serif; letter-spacing:-.02em; line-height:1.1}
-p{margin:0}
+::selection{background:var(--accent); color:#fff}
+h1,h2,h3{margin:0; font-family:'Space Grotesk',sans-serif; letter-spacing:-.02em; line-height:1.1; text-wrap:balance}
+p{margin:0; text-wrap:pretty}
 a{color:inherit; text-decoration:none}
 img,svg{max-width:100%}
 button{font:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:6px}
+.skip-link{position:fixed; top:10px; left:10px; z-index:100; padding:10px 16px; border-radius:100px; background:var(--ink); color:var(--bg); font-weight:600; font-size:.9rem; transform:translateY(-200%); transition:transform .2s}
+.skip-link:focus{transform:none}
 .wrap{width:100%; max-width:1080px; margin-inline:auto; padding-inline:var(--pad)}
 
 /* two soft glows behind the page (static, painted once) */
@@ -123,7 +128,8 @@ header,main,footer{position:relative; z-index:1}
 .section{padding-block:var(--section-y); border-top:1px solid var(--line); scroll-margin-top:var(--header-h)}
 .section-head{max-width:60ch; margin-bottom:clamp(22px,3.5vw,32px)}
 .section h2{font-size:clamp(1.8rem,1.1rem + 2.6vw,2.7rem); font-weight:700}
-.kicker{margin-bottom:8px; font-size:.78rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--faint)}
+.kicker{display:flex; align-items:center; gap:10px; margin-bottom:8px; font-size:.78rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--faint)}
+.kicker::before{content:""; width:18px; height:2px; border-radius:2px; background:var(--accent)}
 .lead{margin-top:10px; max-width:56ch; color:var(--muted)}
 
 .smile-mark{position:relative; display:inline-block}
@@ -196,10 +202,13 @@ nav.wrap{position:relative; height:var(--header-h); display:flex; align-items:ce
 .profile-card::before{content:""; position:absolute; inset:0; background:radial-gradient(70% 55% at 50% 38%, rgba(77,124,254,.38), transparent 70%)}
 .profile-media{
   position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center;
+  transform:translate(var(--fx,0px),var(--fy,0px)); transition:transform .5s var(--ease);
   -webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent 97%);
           mask-image:linear-gradient(to bottom,#000 60%,transparent 97%);
 }
-.avatar-svg,.profile-photo{width:90%; height:auto; max-height:100%; object-fit:contain; object-position:bottom; filter:drop-shadow(0 24px 30px rgba(var(--shadow-rgb),.4))}
+.avatar-svg,.profile-photo{height:auto; max-height:100%; object-fit:contain; object-position:bottom; filter:drop-shadow(0 18px 24px rgba(var(--shadow-rgb),.35))}
+.avatar-svg{width:90%}
+.profile-photo{width:100%}
 .profile-photo{display:none}
 .profile.has-photo .profile-photo{display:block}
 .profile.has-photo .avatar-svg{display:none}
@@ -217,6 +226,7 @@ nav.wrap{position:relative; height:var(--header-h); display:flex; align-items:ce
   background:linear-gradient(145deg,#7A9DFF,var(--accent-deep));
   box-shadow:inset 0 2px 0 rgba(255,255,255,.4), inset 0 -8px 14px rgba(0,0,0,.25), 0 16px 28px rgba(43,79,214,.35);
   animation:float 6s ease-in-out infinite;
+  transform:translate(var(--cx,0px),var(--cy,0px)); transition:transform .5s var(--ease);
 }
 .chip .ico{width:52%; height:52%}
 .chip-1{top:8%; right:-12px; --r:8deg}
@@ -340,6 +350,10 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
   .profile-id{inset:auto 10px 10px; padding:14px 18px}
   .chip-1{right:-6px} .chip-2{left:-8px}
 }
+@media (pointer:coarse){
+  .footer-social a{width:44px; height:44px}
+  .theme-toggle{width:44px; height:44px}
+}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important; transition:none!important; scroll-behavior:auto!important}
   .reveal{opacity:1; transform:none}
@@ -349,6 +363,7 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
 </head>
 
 <body>
+<a class="skip-link" href="#about">Skip to content</a>
 
 <!-- ============ ICON SPRITE ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -420,7 +435,7 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
       <div class="profile reveal" id="profile">
         <div class="profile-card glass">
           <div class="profile-media">
-            <!-- 3D-style figure on a transparent background. Save your own transparent PNG as "profile.png" next to this file to replace it. -->
+            <!-- Placeholder 3D figure: only shown if profile.webp (your cutout photo, next to this file) is missing. -->
             <svg class="avatar-svg" viewBox="0 0 400 440" role="img" aria-label="3D illustration of Juwon">
               <defs>
                 <linearGradient id="gHood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A9DFF"/><stop offset="1" stop-color="#2B4FD6"/></linearGradient>
@@ -444,7 +459,7 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
               <circle cx="240" cy="196" r="5" fill="#4D7CFE"/>
               <path d="M176 244c14 12 34 12 48 0" fill="none" stroke="#7a86a6" stroke-width="5" stroke-linecap="round"/>
             </svg>
-            <img class="profile-photo" src="profile.png" alt="Portrait of Juwon" width="400" height="440" loading="lazy" decoding="async" onload="this.closest('.profile').classList.add('has-photo')">
+            <img class="profile-photo" src="profile.webp" alt="Portrait of Juwon" width="640" height="702" decoding="async" onload="this.closest('.profile').classList.add('has-photo')">
           </div>
           <div class="profile-id glass">
             <div class="name">Adedeji Juwon</div>
@@ -850,6 +865,22 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
       if (art) { art.style.setProperty('--ix', '0px'); art.style.setProperty('--iy', '0px'); }
       setTimeout(() => { card.style.transition = ''; }, 500);
     });
+  });
+
+  /* ---------- profile depth: the cutout and the chips drift against each other ---------- */
+  const prof = $('#profile');
+  let praf = 0, plast = null;
+  const drift = () => {
+    praf = 0;
+    const r = prof.getBoundingClientRect();
+    const px = (plast.clientX - r.left) / r.width - .5, py = (plast.clientY - r.top) / r.height - .5;
+    prof.style.setProperty('--fx', (px * 10).toFixed(1) + 'px');  prof.style.setProperty('--fy', (py * 8).toFixed(1) + 'px');
+    prof.style.setProperty('--cx', (px * -16).toFixed(1) + 'px'); prof.style.setProperty('--cy', (py * -12).toFixed(1) + 'px');
+  };
+  prof.addEventListener('mousemove', e => { plast = e; if (!praf) praf = requestAnimationFrame(drift); });
+  prof.addEventListener('mouseleave', () => {
+    cancelAnimationFrame(praf); praf = 0;
+    ['--fx', '--fy', '--cx', '--cy'].forEach(p => prof.style.setProperty(p, '0px'));
   });
 })();
 </script>
