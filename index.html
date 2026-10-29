@@ -3,361 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Smiles Pixels — Software Engineering Portfolio</title>
-<meta name="description" content="Juwon (Smiles Pixels) — software engineer — front end, back end and AI/ML architecture.">
+<title>Juwon — Software Engineer | Smiles Pixels</title>
+<meta name="description" content="Juwon is a software engineer in Nigeria. Front end, back end and machine learning — fast, reliable software built to grow.">
 <meta name="author" content="Adedeji Juwon">
-<meta name="theme-color" content="#F6F5F1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F3F5F8">
 <link rel="canonical" href="https://smilespixel.github.io/portfolio/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0C'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial' font-size='26' font-weight='900' fill='%234D7CFE' text-anchor='middle'%3ESP%3C/text%3E%3C/svg%3E">
-<meta property="og:title" content="Smiles Pixels — Software Engineering Portfolio">
-<meta property="og:description" content="Juwon builds front end, back end and AI/ML systems that are solid, fast, and built to scale.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F5BEA'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-size='27' font-weight='900' fill='%23fff' text-anchor='middle'%3ESP%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Juwon — Software Engineer">
+<meta property="og:description" content="Front end, back end and machine learning. Fast, reliable software built to grow.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://smilespixel.github.io/portfolio/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Adedeji Juwon","alternateName":"Juwon","jobTitle":"Software Engineer","url":"https://smilespixel.github.io/portfolio/","sameAs":["https://www.facebook.com/profile.php?id=61588944415207","https://www.instagram.com/smiles_pixels","https://x.com/smiles_pixels","https://t.me/smiles_pixels"]}</script>
+<link rel="preload" as="image" href="profile.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- Theme is chosen before first paint (saved choice > device setting > light) so there is never a flash -->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<!-- Theme is chosen before first paint: saved choice, else the device setting, else light. No flash. -->
 <script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem("theme")}catch(e){}if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.dataset.theme=t})();</script>
-<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
 <style>
-/* =========================================================
-   1. TOKENS  (light by default, true-black AMOLED in dark)
-   ========================================================= */
+/* ==========================================================
+   TOKENS — cool paper white, true-black AMOLED, one blue
+   ========================================================== */
 :root{
   color-scheme:light;
-  --bg-rgb:246,245,241; --ink-rgb:20,21,26; --shadow-rgb:40,50,90;
+  --bg-rgb:243,245,248; --ink-rgb:18,20,26; --accent-rgb:47,91,234; --shadow-rgb:40,50,90;
   --bg:rgb(var(--bg-rgb));
   --ink:rgb(var(--ink-rgb));
-  --muted:rgba(var(--ink-rgb),.64);
-  --faint:rgba(var(--ink-rgb),.46);
-  --line:rgba(var(--ink-rgb),.10);
-
-  --accent:#3A62E6;
-  --accent-deep:#2B4FD6;
-  --accent-soft:rgba(58,98,230,.12);
+  --accent:rgb(var(--accent-rgb));
   --accent-ink:#fff;
-  --green:#22c55e;
-
-  --glass:rgba(255,255,255,.62);
-  --glass-hover:rgba(255,255,255,.88);
-  --glass-border:rgba(20,21,26,.09);
+  --muted:rgba(var(--ink-rgb),.72);
+  --faint:rgba(var(--ink-rgb),.56);
+  --line:rgba(var(--ink-rgb),.12);
+  --line-strong:rgba(var(--ink-rgb),.28);
+  --glass:rgba(255,255,255,.68);
+  --glass-border:rgba(var(--ink-rgb),.10);
   --glass-hi:rgba(255,255,255,.95);
+  --glow:rgba(var(--accent-rgb),.14);
 
-  --glow-a:rgba(77,124,254,.17);
-  --glow-b:rgba(43,79,214,.10);
-
-  --radius:20px;
+  --r-lg:28px; --r-md:16px;
   --header-h:64px;
-  --pad:clamp(18px,4vw,32px);
-  --section-y:clamp(40px,6vw,64px);
+  --pad:clamp(20px,5vw,40px);
+  --gap-section:clamp(56px,9vw,104px);
   --ease:cubic-bezier(.22,.9,.32,1);
+
+  /* type scale (≈1.25) */
+  --t-0:1.0625rem; --t-1:1.1875rem;
+  --t-2:clamp(1.35rem,1.15rem + .9vw,1.7rem);
+  --t-3:clamp(1.7rem,1.2rem + 2vw,2.5rem);
 }
 [data-theme="dark"]{
   color-scheme:dark;
-  --bg-rgb:0,0,0; --ink-rgb:242,240,233; --shadow-rgb:0,0,0;
-  --accent:#4D7CFE;
-  --accent-soft:rgba(77,124,254,.16);
-  --accent-ink:#081029;
-  --glass:rgba(255,255,255,.05);
-  --glass-hover:rgba(255,255,255,.085);
-  --glass-border:rgba(255,255,255,.12);
-  --glass-hi:rgba(255,255,255,.17);
-  --glow-a:rgba(77,124,254,.08);
-  --glow-b:rgba(43,79,214,.05);
+  --bg-rgb:0,0,0; --ink-rgb:244,243,239; --accent-rgb:108,147,255; --shadow-rgb:0,0,0;
+  --accent-ink:#050A1C;
+  --glass:rgba(255,255,255,.06);
+  --glass-border:rgba(255,255,255,.14);
+  --glass-hi:rgba(255,255,255,.16);
+  --glow:rgba(var(--accent-rgb),.10);
 }
-[data-theme="dark"] .hero-blob{opacity:.3}
 
-/* =========================================================
-   2. BASE
-   ========================================================= */
+/* ==========================================================
+   BASE
+   ========================================================== */
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth; -webkit-text-size-adjust:100%; scrollbar-width:thin; scrollbar-color:rgba(var(--ink-rgb),.25) transparent}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%; -webkit-tap-highlight-color:transparent; scrollbar-width:thin; scrollbar-color:rgba(var(--ink-rgb),.28) transparent}
 body{
-  margin:0; position:relative; overflow-x:clip;
-  background:var(--bg); color:var(--ink);
-  font:400 16px/1.6 'Inter',system-ui,sans-serif;
+  margin:0; overflow-x:clip; background:var(--bg); color:var(--ink);
+  font:400 var(--t-0)/1.6 'Bricolage Grotesque',system-ui,sans-serif;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-::selection{background:var(--accent); color:#fff}
-h1,h2,h3{margin:0; font-family:'Space Grotesk',sans-serif; letter-spacing:-.02em; line-height:1.1; text-wrap:balance}
+body::before{content:""; position:fixed; inset:0; z-index:0; pointer-events:none; background:radial-gradient(60vmax 45vmax at 92% -8%, var(--glow), transparent 65%)}
+header,main,footer{position:relative; z-index:1}
+h1,h2,h3{margin:0; font-weight:700; letter-spacing:-.02em; line-height:1.1; text-wrap:balance}
 p{margin:0; text-wrap:pretty}
+ul,ol{margin:0; padding:0; list-style:none}
 a{color:inherit; text-decoration:none}
 img,svg{max-width:100%}
-button{font:inherit}
+button{font:inherit; color:inherit}
+::selection{background:var(--accent); color:var(--accent-ink)}
 :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:6px}
+.wrap{width:100%; max-width:1080px; margin-inline:auto; padding-inline:var(--pad)}
 .skip-link{position:fixed; top:10px; left:10px; z-index:100; padding:10px 16px; border-radius:100px; background:var(--ink); color:var(--bg); font-weight:600; font-size:.9rem; transform:translateY(-200%); transition:transform .2s}
 .skip-link:focus{transform:none}
-.wrap{width:100%; max-width:1080px; margin-inline:auto; padding-inline:var(--pad)}
 
-/* two soft glows behind the page (static, painted once) */
-body::before{
-  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
-  background:
-    radial-gradient(60vmax 50vmax at 8% 4%,  var(--glow-a), transparent 62%),
-    radial-gradient(55vmax 45vmax at 94% 60%, var(--glow-b), transparent 62%);
-}
-header,main,footer{position:relative; z-index:1}
+.ico{width:1em; height:1em; flex-shrink:0; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
 
-/* glass surface: translucent fill + hairline + top highlight (no blur needed on a flat background) */
-.glass{
-  background:var(--glass);
-  border:1px solid var(--glass-border);
-  box-shadow:inset 0 1px 0 var(--glass-hi), 0 10px 30px rgba(var(--shadow-rgb),.12);
-}
+/* glass: used on three surfaces only — header, profile card, contact block */
+.glass{background:var(--glass); border:1px solid var(--glass-border); box-shadow:inset 0 1px 0 var(--glass-hi)}
 
-.ico{
-  width:1em; height:1em; flex-shrink:0; display:inline-block; vertical-align:-.125em;
-  fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
-}
+/* buttons: one filled action, one quiet */
+.btn{display:inline-flex; align-items:center; justify-content:center; padding:13px 26px; border:1.5px solid transparent; border-radius:100px; cursor:pointer; background:var(--ink); color:var(--bg); font-weight:600; font-size:1rem; white-space:nowrap; transition:background .2s, color .2s, border-color .2s}
+.btn:hover{background:var(--accent); color:var(--accent-ink)}
+.btn.ghost{background:transparent; color:var(--ink); border-color:var(--line-strong)}
+.btn.ghost:hover{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.link{font-weight:600; color:var(--accent); text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:4px}
+.link:hover{text-decoration-thickness:2.5px}
 
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:9px;
-  padding:12px 24px; border:1.5px solid transparent; border-radius:100px; cursor:pointer;
-  background:var(--ink); color:var(--bg);
-  font-weight:600; font-size:.92rem; white-space:nowrap;
-  transition:transform .25s var(--ease), background .2s, color .2s, border-color .2s;
-}
-.btn:hover{background:var(--accent); color:var(--accent-ink); transform:translateY(-2px)}
-.btn:active{transform:none}
-.btn-ghost{background:transparent; color:var(--ink); border-color:rgba(var(--ink-rgb),.28)}
-.btn-ghost:hover{background:var(--ink); color:var(--bg); border-color:var(--ink)}
-.btn .ico-arrow{transition:transform .25s}
-.btn:hover .ico-arrow{transform:translateX(4px)}
-
-.section{padding-block:var(--section-y); border-top:1px solid var(--line); scroll-margin-top:var(--header-h)}
-.section-head{max-width:60ch; margin-bottom:clamp(22px,3.5vw,32px)}
-.section h2{font-size:clamp(1.8rem,1.1rem + 2.6vw,2.7rem); font-weight:700}
-.kicker{display:flex; align-items:center; gap:10px; margin-bottom:8px; font-size:.78rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--faint)}
-.kicker::before{content:""; width:18px; height:2px; border-radius:2px; background:var(--accent)}
-.lead{margin-top:10px; max-width:56ch; color:var(--muted)}
-
-.smile-mark{position:relative; display:inline-block}
-.smile-mark::after{content:""; position:absolute; inset:auto 2% -.1em; height:.12em; border-radius:100px; background:var(--accent)}
-
-/* =========================================================
-   3. HEADER
-   ========================================================= */
-header{
-  position:sticky; top:0; z-index:50; padding-top:env(safe-area-inset-top,0px);
-  background:rgba(var(--bg-rgb),.72);
-  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--glass-border);
-}
+/* ==========================================================
+   HEADER
+   ========================================================== */
+header{position:sticky; top:0; z-index:50; padding-top:env(safe-area-inset-top,0px); background:rgba(var(--bg-rgb),.78); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--glass-border)}
 nav.wrap{position:relative; height:var(--header-h); display:flex; align-items:center; justify-content:space-between}
-.logo{font:700 1.25rem 'Space Grotesk',sans-serif; letter-spacing:-.01em}
-.logo span{color:var(--accent)}
-.nav-links{margin-left:auto; display:flex; align-items:center; gap:clamp(18px,2.6vw,30px); font-size:.95rem; font-weight:500}
-.nav-links a{position:relative; padding:4px 0; opacity:.7; transition:opacity .2s}
-.nav-links a:hover,.nav-links a.active{opacity:1}
-.nav-links a::after{content:""; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--accent); transition:width .3s}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-
-.nav-tools{display:flex; align-items:center; gap:8px; margin-left:clamp(14px,2vw,22px)}
-.theme-toggle{
-  position:relative; display:grid; place-items:center; width:40px; height:40px; padding:0; border-radius:50%;
-  color:var(--ink); font-size:1.15rem; cursor:pointer;
-  transition:transform .3s var(--ease), background .2s, border-color .2s;
-}
-.theme-toggle:hover{background:var(--glass-hover); border-color:var(--accent); transform:rotate(18deg)}
-.theme-toggle:active{transform:scale(.88)}
-.theme-toggle .ico{grid-area:1/1; transition:transform .55s var(--ease), opacity .35s}
+.logo{font-size:1.2rem; font-weight:760; letter-spacing:-.02em}
+.nav-links{margin-left:auto; display:flex; align-items:center; gap:clamp(18px,2.6vw,30px); font-size:.98rem; font-weight:500}
+.nav-links a{position:relative; padding:4px 0; color:var(--muted); transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a::after{content:""; position:absolute; left:0; bottom:-3px; height:2px; width:100%; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform .25s var(--ease)}
+.nav-links a.active::after{transform:scaleX(1)}
+.nav-tools{display:flex; align-items:center; gap:6px; margin-left:clamp(14px,2vw,22px)}
+.theme-toggle{display:grid; place-items:center; width:44px; height:44px; padding:0; border-radius:50%; font-size:1.15rem; cursor:pointer; transition:border-color .2s, background .2s}
+.theme-toggle:hover{border-color:var(--accent)}
+.theme-toggle .ico{grid-area:1/1; transition:transform .5s var(--ease), opacity .3s}
 .theme-toggle .ico-sun{opacity:0; transform:rotate(-90deg) scale(.3)}
 [data-theme="dark"] .theme-toggle .ico-sun{opacity:1; transform:none}
 [data-theme="dark"] .theme-toggle .ico-moon{opacity:0; transform:rotate(90deg) scale(.3)}
-
-.burger{display:none; flex-direction:column; gap:5px; padding:10px; background:none; border:0; cursor:pointer}
-.burger span{display:block; width:24px; height:2px; background:var(--ink); transition:transform .3s, opacity .3s}
+.burger{display:none; width:44px; height:44px; padding:0; align-items:center; justify-content:center; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer}
+.burger span{display:block; width:22px; height:2px; background:var(--ink); transition:transform .3s, opacity .3s}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* =========================================================
-   4. HERO
-   ========================================================= */
-.hero{position:relative; overflow:hidden; padding-block:clamp(56px,10vh,104px)}
-.hero > .wrap{position:relative; z-index:1}
-.hero-blob{
-  position:absolute; top:-14%; right:-10%; width:min(520px,70vw); aspect-ratio:1; pointer-events:none;
-  background:radial-gradient(circle at 35% 35%, rgba(77,124,254,.42), transparent 65%); opacity:.55;
-}
-.hero h1{max-width:18ch; font-size:clamp(2.3rem,1.1rem + 5.4vw,4.6rem); font-weight:700; line-height:1.04}
-.hero-sub{max-width:46ch; margin-top:18px; font-size:clamp(1rem,.95rem + .3vw,1.15rem); color:var(--muted)}
-.rotator{display:inline-block; min-width:11ch; padding-right:3px; border-right:2px solid var(--accent); color:var(--accent); font-weight:600}
-.hero-cta{margin-top:28px}
+/* ==========================================================
+   HERO — the person first
+   ========================================================== */
+.hero{padding-block:clamp(36px,7vw,84px) clamp(48px,8vw,96px)}
+.hero-grid{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); gap:clamp(28px,5vw,64px); align-items:center}
+.hero h1{font-size:clamp(2.7rem,1rem + 7.2vw,6rem); line-height:.97; letter-spacing:-.04em; font-weight:780}
+.hero h1 .soft{display:block; margin-top:.1em; font-weight:360; color:var(--muted)}
+.hero-sub{max-width:50ch; margin-top:clamp(18px,3vw,28px); font-size:var(--t-1); color:var(--muted)}
+.hero-cta{display:flex; flex-wrap:wrap; align-items:center; gap:14px 26px; margin-top:clamp(24px,4vw,36px)}
 
-/* =========================================================
-   5. ABOUT
-   ========================================================= */
-.about{display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(24px,4.5vw,48px); align-items:center}
-.about-body h2{margin-bottom:14px}
-.about-body p{margin-bottom:12px; font-size:1.05rem; color:var(--muted)}
-.about-body p:last-child{margin-bottom:0}
-
-.profile{position:relative; width:100%; max-width:340px; margin-inline:auto}
-.profile-card{
-  position:relative; aspect-ratio:4/5; border-radius:var(--radius); overflow:hidden;
-  background:linear-gradient(165deg,rgba(77,124,254,.30),rgba(43,79,214,.16));
-}
-.profile-card::before{content:""; position:absolute; inset:0; background:radial-gradient(70% 55% at 50% 38%, rgba(77,124,254,.38), transparent 70%)}
-.profile-media{
-  position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center;
-  transform:translate(var(--fx,0px),var(--fy,0px)); transition:transform .5s var(--ease);
-  -webkit-mask-image:linear-gradient(to bottom,#000 60%,transparent 97%);
-          mask-image:linear-gradient(to bottom,#000 60%,transparent 97%);
-}
-.avatar-svg,.profile-photo{height:auto; max-height:100%; object-fit:contain; object-position:bottom; filter:drop-shadow(0 18px 24px rgba(var(--shadow-rgb),.35))}
-.avatar-svg{width:90%}
-.profile-photo{width:100%}
-.profile-photo{display:none}
+.profile{position:relative; width:100%; max-width:380px; justify-self:end}
+.profile-card{position:relative; aspect-ratio:4/5; border-radius:var(--r-lg); overflow:hidden; background:linear-gradient(165deg, rgba(var(--accent-rgb),.28), rgba(var(--accent-rgb),.08))}
+.profile-card::before{content:""; position:absolute; inset:0; background:radial-gradient(70% 55% at 50% 36%, rgba(var(--accent-rgb),.32), transparent 70%)}
+.profile-media{position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:center; transform:translate(var(--fx,0px),var(--fy,0px)); transition:transform .5s var(--ease); -webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 98%); mask-image:linear-gradient(to bottom,#000 62%,transparent 98%)}
+.avatar-svg,.profile-photo{height:auto; max-height:100%; object-fit:contain; object-position:bottom; filter:drop-shadow(0 16px 22px rgba(var(--shadow-rgb),.3))}
+.avatar-svg{width:88%}
+.profile-photo{display:none; width:100%}
 .profile.has-photo .profile-photo{display:block}
 .profile.has-photo .avatar-svg{display:none}
-
-.profile-id{
-  position:absolute; inset:auto 14px 14px; padding:16px 22px; border-radius:16px;
-  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-}
-.profile-id .name{font:700 1.4rem 'Space Grotesk',sans-serif; letter-spacing:-.02em}
-.profile-id .role{margin-top:2px; font-size:.88rem; font-weight:500; color:var(--accent)}
-
-.chip{
-  position:absolute; z-index:3; width:clamp(46px,12vw,56px); aspect-ratio:1; display:grid; place-items:center;
-  border-radius:16px; color:#fff; rotate:var(--r,0deg);
-  background:linear-gradient(145deg,#7A9DFF,var(--accent-deep));
-  box-shadow:inset 0 2px 0 rgba(255,255,255,.4), inset 0 -8px 14px rgba(0,0,0,.25), 0 16px 28px rgba(43,79,214,.35);
-  animation:float 6s ease-in-out infinite;
-  transform:translate(var(--cx,0px),var(--cy,0px)); transition:transform .5s var(--ease);
-}
+.profile-id{position:absolute; inset:auto 14px 14px; padding:14px 20px; border-radius:var(--r-md); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px)}
+.profile-id strong{display:block; font-size:1.25rem; font-weight:700; letter-spacing:-.02em; line-height:1.2}
+.profile-id span{font-size:.95rem; color:var(--muted)}
+.chip{position:absolute; z-index:2; display:grid; place-items:center; width:52px; height:52px; border-radius:var(--r-md); background:var(--accent); color:var(--accent-ink); font-size:1.35rem; rotate:var(--r,0deg); box-shadow:inset 0 2px 0 rgba(255,255,255,.35), 0 10px 22px rgba(var(--accent-rgb),.35); transform:translate(var(--cx,0px),var(--cy,0px)); transition:transform .5s var(--ease)}
 .chip .ico{width:52%; height:52%}
-.chip-1{top:8%; right:-12px; --r:8deg}
-.chip-2{top:44%; left:-14px; --r:-9deg; animation-delay:-3s}
+.chip-1{top:7%; right:-14px; --r:8deg}
+.chip-2{top:46%; left:-16px; --r:-8deg}
 
-/* =========================================================
-   6. CARDS  (work / process / why)
-   ========================================================= */
-.grid-3,.grid-4{display:grid; gap:16px}
-.grid-3{grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
-.grid-4{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+/* ==========================================================
+   SECTIONS — label left, content right
+   ========================================================== */
+.section{padding-block:var(--gap-section); border-top:1px solid var(--line); scroll-margin-top:var(--header-h)}
+.split{display:grid; grid-template-columns:minmax(0,230px) minmax(0,1fr); gap:clamp(20px,4vw,56px); align-items:start}
+.split > h2{font-size:var(--t-3); position:sticky; top:calc(var(--header-h) + 28px)}
+.prose p{max-width:60ch; font-size:var(--t-1); color:var(--muted)}
+.prose p + p{margin-top:1em}
 
-.work-icon{display:grid; place-items:center; width:44px; height:44px; border-radius:12px; background:var(--accent); color:var(--accent-ink); font-size:1.15rem; transition:transform .35s var(--ease)}
-.num{font:500 .8rem 'Space Grotesk',sans-serif; letter-spacing:.1em; color:var(--faint)}
+/* what I do — rows, art fades in from the side */
+.role{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,250px); gap:12px 28px; align-items:center; padding-block:26px; border-top:1px solid var(--line)}
+.role:first-child{border-top:0; padding-top:0}
+.role:last-child{padding-bottom:0}
+.role h3{margin-bottom:6px; font-size:var(--t-2); font-weight:700}
+.role p{max-width:46ch; color:var(--muted)}
+.art{height:132px; overflow:hidden; color:var(--ink); -webkit-mask-image:linear-gradient(to right,transparent,#000 42%); mask-image:linear-gradient(to right,transparent,#000 42%)}
+.art svg{display:block; width:100%; height:100%}
 
-/* work cards: artwork dissolves into the card */
-.work-card{position:relative; display:flex; flex-direction:column; overflow:hidden; border-radius:var(--radius); transition:transform .3s var(--ease), border-color .3s, background .3s}
-.grid-3 .work-card:hover{transform:translateY(-6px); border-color:rgba(77,124,254,.55); background:var(--glass-hover)}
-.work-card:hover .work-icon,.info-card:hover .work-icon{transform:rotate(-8deg)}
-.work-img{
-  --sc:1.14; color:var(--ink);
-  height:clamp(130px,17vw,160px); overflow:hidden;
-  -webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent 100%);
-          mask-image:linear-gradient(to bottom,#000 50%,transparent 100%);
-}
-.work-card.seen .work-img{--sc:1.04}
-.work-card:hover .work-img{--hv:.04}
-.work-img svg{
-  display:block; width:100%; height:100%;
-  transform:translate(var(--ix,0px),var(--iy,0px)) scale(calc(var(--sc) + var(--hv,0)));
-  transition:transform .8s var(--ease);
-}
-.work-body{margin-top:-30px; padding:0 22px 22px; position:relative}
-.work-top{margin-bottom:12px}
-.work-card h3,.info-card h3{margin-bottom:6px; font-size:1.2rem; font-weight:600}
-.work-card p,.info-card p{font-size:.94rem; color:var(--muted)}
+.lede{max-width:56ch; margin-bottom:28px; font-size:var(--t-1); color:var(--muted)}
+/* how a project goes — a real sequence, so it is numbered */
+.steps li{position:relative; padding:0 0 28px 58px; counter-increment:step}
+.steps{counter-reset:step}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(step); position:absolute; left:0; top:0; display:grid; place-items:center; width:38px; height:38px; border:1px solid var(--line-strong); border-radius:50%; font-weight:700; font-size:.95rem}
+.steps li:not(:last-child)::after{content:""; position:absolute; left:19px; top:46px; bottom:8px; width:1px; background:var(--line)}
+.steps h3{padding-top:5px; margin-bottom:4px; font-size:var(--t-1); font-weight:700}
+.steps p{max-width:54ch; color:var(--muted)}
 
-.info-card{padding:22px; border-radius:var(--radius); transition:transform .3s var(--ease), border-color .3s, background .3s}
-.grid-3 .info-card:hover,.grid-4 .info-card:hover{transform:translateY(-4px); border-color:rgba(77,124,254,.5); background:var(--glass-hover)}
-.info-top{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px}
-.info-card h3{font-size:1.1rem}
+/* why me */
+.reasons{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:28px 36px}
+.reasons li{padding-top:16px; border-top:1px solid var(--line)}
+.reasons h3{margin-bottom:6px; font-size:var(--t-1); font-weight:700}
+.reasons p{color:var(--muted)}
 
-/* =========================================================
-   7. CERTIFICATE
-   ========================================================= */
-.cert-card{display:flex; flex-wrap:wrap; gap:20px; max-width:760px; padding:clamp(16px,2.5vw,22px); border-radius:var(--radius)}
-.cert-media{flex:0 0 150px; min-height:140px; border-radius:14px; overflow:hidden; color:var(--ink)}
-.cert-media svg{display:block; width:100%; height:100%}
-.cert-content{flex:1 1 260px; min-width:0}
-.cert-top{display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:10px 16px}
-.cert-issuer{font-size:.75rem; font-weight:600; letter-spacing:.14em; color:var(--faint)}
-.cert-top h3{margin-top:4px; font-size:1.2rem; font-weight:600}
-.cert-badge{display:inline-flex; align-items:center; gap:6px; padding:5px 12px; border:1px solid var(--accent); border-radius:100px; font-size:.78rem; font-weight:600; color:var(--accent)}
-.cert-badge .ico{width:14px; height:14px; stroke-width:3}
-.cert-content p{margin:12px 0 14px; font-size:.95rem; color:var(--muted)}
-.cert-link{display:inline-flex; align-items:center; gap:8px; font-size:.92rem; font-weight:600; color:var(--accent)}
-.cert-link .ico-arrow{transition:transform .25s}
-.cert-link:hover .ico-arrow{transform:translateX(4px)}
+/* certificate — one line item, not a card */
+.cert{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px 28px; padding-block:20px; border-block:1px solid var(--line)}
+.cert h3{font-size:var(--t-1); font-weight:700}
+.cert p{margin-top:2px; max-width:52ch; color:var(--muted)}
 
-/* =========================================================
-   8. CONTACT + FOOTER + FLOATING BUTTON
-   ========================================================= */
-.section.contact-section{border-top:0; padding-top:0}
-.contact{
-  position:relative; overflow:hidden; text-align:center; border-radius:var(--radius);
-  padding:clamp(26px,4.5vw,40px) clamp(18px,4vw,36px);
-  background:linear-gradient(135deg, rgba(77,124,254,.26), rgba(43,79,214,.14) 55%, rgba(120,160,255,.12));
-}
-.contact h2{font-size:clamp(1.4rem,1rem + 1.8vw,2rem)}
-.contact p{max-width:44ch; margin:10px auto 18px; font-size:.95rem; color:var(--muted)}
-.contact-cta{display:flex; flex-wrap:wrap; justify-content:center; gap:10px}
-.contact .btn{padding:10px 20px; font-size:.86rem}
+/* contact */
+.section.contact-wrap{border-top:0; padding-top:0}
+.contact{display:grid; gap:14px; justify-items:start; padding:clamp(28px,5vw,56px); border-radius:var(--r-lg); background:linear-gradient(135deg, rgba(var(--accent-rgb),.18), rgba(var(--accent-rgb),.05)); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px)}
+.contact h2{font-size:clamp(2rem,1.2rem + 3.6vw,3.4rem); letter-spacing:-.03em}
+.contact p{max-width:44ch; font-size:var(--t-1); color:var(--muted)}
+.contact-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px}
 
-footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area-inset-bottom,0px)); border-top:1px solid var(--line)}
+/* footer */
+footer{padding:36px 0 calc(32px + env(safe-area-inset-bottom,0px)); border-top:1px solid var(--line)}
 .footer-row{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px}
-.footer-note{margin-top:4px; font-size:.85rem; color:var(--faint)}
-.footer-social{display:flex; flex-wrap:wrap; gap:10px}
-.footer-social a{display:grid; place-items:center; width:38px; height:38px; border-radius:50%; font-size:18px; color:var(--muted); transition:background .2s, color .2s, border-color .2s, transform .2s}
-.footer-social a:hover{background:var(--accent); border-color:var(--accent); color:#fff; transform:translateY(-3px)}
+.footer-note{margin-top:2px; font-size:.9rem; color:var(--faint)}
+.footer-social{display:flex; flex-wrap:wrap; gap:8px}
+.footer-social a{display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line); border-radius:50%; font-size:18px; color:var(--muted); transition:background .2s, color .2s, border-color .2s}
+.footer-social a:hover{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+.chat-fab{position:fixed; z-index:60; right:max(18px,env(safe-area-inset-right,0px)); bottom:calc(20px + env(safe-area-inset-bottom,0px)); display:grid; place-items:center; width:54px; height:54px; border-radius:50%; background:#22c55e; color:#fff; font-size:1.6rem; box-shadow:0 8px 20px rgba(34,197,94,.3); transition:transform .2s}
+.chat-fab:hover{transform:scale(1.07)}
 
-.chat-fab{
-  position:fixed; z-index:60; right:max(18px,env(safe-area-inset-right,0px)); bottom:calc(20px + env(safe-area-inset-bottom,0px));
-  display:grid; place-items:center; width:54px; height:54px; border-radius:50%;
-  background:var(--green); color:#fff; font-size:1.6rem;
-  box-shadow:0 8px 22px rgba(34,197,94,.35); transition:transform .2s;
-}
-.chat-fab:hover{transform:scale(1.08)}
-
-/* =========================================================
-   9. MOTION  (kept deliberately small: opacity + transform only)
-   ========================================================= */
-.reveal{opacity:0; transform:translateY(20px); transition:opacity .6s var(--ease), transform .6s var(--ease)}
-.reveal.is-visible{opacity:1; transform:none}
-.reveal.d1.is-visible{transition-delay:.07s}
-.reveal.d2.is-visible{transition-delay:.14s}
-@keyframes float{50%{translate:0 -8px}}
-
-/* theme switch: circular wipe from the button */
+/* theme switch: circular wipe from the button (answers a click) */
 ::view-transition-old(root),::view-transition-new(root){animation:none; mix-blend-mode:normal}
 ::view-transition-old(root){z-index:1}
 ::view-transition-new(root){z-index:9999}
-.theme-anim,.theme-anim *{transition:background-color .5s ease, color .5s ease, border-color .5s ease, fill .5s ease, stroke .5s ease, box-shadow .5s ease!important}
+.theme-anim,.theme-anim *{transition:background-color .5s ease, color .5s ease, border-color .5s ease, fill .5s ease, stroke .5s ease!important}
 
-/* =========================================================
-   10. RESPONSIVE
-   ========================================================= */
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
 @media (max-width:860px){
   .burger{display:flex}
-  .nav-links{
-    display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; gap:0;
-    padding:8px var(--pad) 16px; background:rgba(var(--bg-rgb),.96); border-bottom:1px solid var(--glass-border);
-  }
+  .nav-links{display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; gap:0; padding:6px var(--pad) 14px; background:rgba(var(--bg-rgb),.97); border-bottom:1px solid var(--glass-border)}
   .nav-links.open{display:flex}
-  .nav-links a{padding:14px 0; border-bottom:1px solid var(--line)}
+  .nav-links a{padding:15px 0; font-size:1.05rem; border-bottom:1px solid var(--line)}
   .nav-links a:last-child{border-bottom:0}
   .nav-links a::after{display:none}
-  .about{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .profile{justify-self:center; max-width:320px}
+  .split{grid-template-columns:1fr}
+  .split > h2{position:static}
 }
-@media (max-width:480px){
-  .cert-media{flex-basis:100%}
-  .profile-id{inset:auto 10px 10px; padding:14px 18px}
-  .chip-1{right:-6px} .chip-2{left:-8px}
-}
-@media (pointer:coarse){
-  .footer-social a{width:44px; height:44px}
-  .theme-toggle{width:44px; height:44px}
+@media (max-width:640px){
+  .role{grid-template-columns:1fr}
+  .art{order:-1; height:116px; -webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent); mask-image:linear-gradient(to bottom,#000 50%,transparent)}
+  .btn{padding:13px 22px}
 }
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important; transition:none!important; scroll-behavior:auto!important}
-  .reveal{opacity:1; transform:none}
-  .rotator{border-right:0}
+  *,*::before,*::after{transition:none!important; animation:none!important; scroll-behavior:auto!important}
 }
 </style>
 </head>
@@ -365,24 +243,12 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
 <body>
 <a class="skip-link" href="#about">Skip to content</a>
 
-<!-- ============ ICON SPRITE ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="4.6" y1="4.6" x2="6.4" y2="6.4"/><line x1="17.6" y1="17.6" x2="19.4" y2="19.4"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.6" y1="19.4" x2="6.4" y2="17.6"/><line x1="17.6" y1="6.4" x2="19.4" y2="4.6"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
     <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
-    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></symbol>
-    <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></symbol>
     <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
-    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
-    <symbol id="i-deploy" viewBox="0 0 24 24"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></symbol>
-    <symbol id="i-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
-    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
     <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="M9.2 8.6c.3 2.6 2.6 5 5.4 5.9l1.2-1.3-1.9-.9-.8.6c-.9-.4-1.8-1.3-2.2-2.2l.6-.8-.9-1.9z"/></symbol>
     <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
     <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
@@ -391,14 +257,13 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
   </defs>
 </svg>
 
-<!-- ============ HEADER ============ -->
 <header>
   <nav class="wrap" aria-label="Main">
-    <a class="logo" href="#top">Smiles <span>Pixels</span></a>
+    <a class="logo" href="#top">Smiles Pixels</a>
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
-      <a href="#process">Process</a>
       <a href="#work">Work</a>
+      <a href="#process">Process</a>
       <a href="#why">Why me</a>
       <a href="#certificates">Certificates</a>
       <a href="#contact">Contact</a>
@@ -408,34 +273,28 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
         <svg class="ico ico-sun" aria-hidden="true"><use href="#i-sun"/></svg>
         <svg class="ico ico-moon" aria-hidden="true"><use href="#i-moon"/></svg>
       </button>
-      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     </div>
   </nav>
 </header>
 
 <main id="top">
 
-  <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero-blob" aria-hidden="true"></div>
-    <div class="wrap">
-      <h1>Hi, I'm Juwon.<br><span class="smile-mark">Welcome</span> to my portfolio.</h1>
-      <p class="hero-sub">I'm a software engineer who builds <span class="rotator" id="rotator">web interfaces</span><br>that are fast, reliable and built to scale.</p>
-      <div class="hero-cta">
-        <a href="#work" class="btn">See my work <svg class="ico ico-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Hi, I'm Juwon.<span class="soft">Welcome to my portfolio.</span></h1>
+        <p class="hero-sub">I'm a software engineer in Nigeria. I build the screens people use, the systems behind them, and the machine learning that makes them smarter. Everything is fast, reliable and ready to grow.</p>
+        <div class="hero-cta">
+          <a class="btn" href="https://wa.me/2347011690016?text=Hi%20Juwon%2C%20I%27d%20like%20to%20book%20a%20meeting." target="_blank" rel="noopener">Book a meeting</a>
+          <a class="link" href="#work">See what I do</a>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="section" id="about">
-    <div class="wrap about">
-      <div class="profile reveal" id="profile">
+      <div class="profile" id="profile">
         <div class="profile-card glass">
           <div class="profile-media">
-            <!-- Placeholder 3D figure: only shown if profile.webp (your cutout photo, next to this file) is missing. -->
+            <!-- Fallback figure, shown only if profile.webp is missing from this folder -->
             <svg class="avatar-svg" viewBox="0 0 400 440" role="img" aria-label="3D illustration of Juwon">
               <defs>
                 <linearGradient id="gHood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A9DFF"/><stop offset="1" stop-color="#2B4FD6"/></linearGradient>
@@ -459,70 +318,39 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
               <circle cx="240" cy="196" r="5" fill="#4D7CFE"/>
               <path d="M176 244c14 12 34 12 48 0" fill="none" stroke="#7a86a6" stroke-width="5" stroke-linecap="round"/>
             </svg>
-            <img class="profile-photo" src="profile.webp" alt="Portrait of Juwon" width="640" height="702" decoding="async" onload="this.closest('.profile').classList.add('has-photo')">
+            <img class="profile-photo" src="profile.webp" alt="Portrait of Juwon" width="640" height="702" fetchpriority="high" decoding="async" onload="this.closest('.profile').classList.add('has-photo')">
           </div>
           <div class="profile-id glass">
-            <div class="name">Adedeji Juwon</div>
-            <div class="role">Software Engineer · Nigeria</div>
+            <strong>Adedeji Juwon</strong>
+            <span>Software engineer, Nigeria</span>
           </div>
         </div>
         <span class="chip chip-1" aria-hidden="true"><svg class="ico"><use href="#i-code"/></svg></span>
         <span class="chip chip-2" aria-hidden="true"><svg class="ico"><use href="#i-cpu"/></svg></span>
       </div>
+    </div>
+  </section>
 
-      <div class="about-body reveal d1">
-        <div class="kicker">About</div>
-        <h2>Passion-led engineering, project by project.</h2>
-        <p>I'm a software engineer and creator with a real passion for building things that work. I enjoy projects big and small — that's the key to good software.</p>
-        <p>I care about the process as much as the outcome, so every client can trust the result as much as I trust the code behind it.</p>
+  <section class="section" id="about">
+    <div class="wrap split">
+      <h2>About me</h2>
+      <div class="prose">
+        <p>I'm a software engineer from Nigeria who likes building things that work: clean code, quick pages and systems that stay up.</p>
+        <p>I take on projects of any size and care about the same things in each one. You should understand what's happening, trust the result and be able to build on it later.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ PROCESS ============ -->
-  <section class="section" id="process">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="kicker">How I Work</div>
-        <h2>What a modern software engineer actually does</h2>
-        <p class="lead">Code is only one part of the job. Here is the full journey from idea to launch.</p>
-      </div>
-      <div class="grid-4">
-        <article class="info-card glass reveal">
-          <div class="info-top"><span class="num">01</span><span class="work-icon"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg></span></div>
-          <h3>Understand &amp; plan</h3>
-          <p>I start with questions — who it is for, what it should achieve and what success looks like — so we build the right thing first time.</p>
-        </article>
-        <article class="info-card glass reveal d1">
-          <div class="info-top"><span class="num">02</span><span class="work-icon"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg></span></div>
-          <h3>Design &amp; build</h3>
-          <p>Clean, well-organised code with version control and careful review, using modern tools — including AI assistants — with human judgment.</p>
-        </article>
-        <article class="info-card glass reveal d2">
-          <div class="info-top"><span class="num">03</span><span class="work-icon"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></span></div>
-          <h3>Test &amp; secure</h3>
-          <p>Automated tests and security checks catch bugs and protect user data before anything goes live.</p>
-        </article>
-        <article class="info-card glass reveal d1">
-          <div class="info-top"><span class="num">04</span><span class="work-icon"><svg class="ico" aria-hidden="true"><use href="#i-deploy"/></svg></span></div>
-          <h3>Launch &amp; automate</h3>
-          <p>Reliable hosting and automated pipelines mean updates ship quickly and safely instead of by hand.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WORK ============ -->
   <section class="section" id="work">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="kicker">What I Build</div>
-        <h2>Software built to last</h2>
-      </div>
-      <div class="grid-3">
-        <article class="work-card glass reveal tilt">
-          <div class="work-img">
-            <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Browser window showing a modern interface">
+    <div class="wrap split">
+      <h2>What I do</h2>
+      <ul class="roles">
+        <li class="role">
+          <div>
+            <h3>Front end developer</h3>
+            <p>I build the screens people use: fast, responsive and easy to use on any device.</p>
+          </div>
+          <div class="art"><svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Browser window showing a modern interface">
               <rect width="480" height="270" fill="currentColor" fill-opacity=".04"/>
               <rect x="36" y="28" width="408" height="222" rx="14" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-opacity=".16"/>
               <circle cx="56" cy="48" r="5" fill="#ff5f57"/><circle cx="74" cy="48" r="5" fill="#febc2e"/><circle cx="92" cy="48" r="5" fill="#28c840"/>
@@ -542,17 +370,14 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
               <rect x="92" y="208" width="56" height="7" rx="3.5" fill="currentColor" fill-opacity=".3"/>
               <rect x="220" y="208" width="56" height="7" rx="3.5" fill="currentColor" fill-opacity=".3"/>
               <rect x="348" y="208" width="56" height="7" rx="3.5" fill="currentColor" fill-opacity=".3"/>
-            </svg>
+            </svg></div>
+        </li>
+        <li class="role">
+          <div>
+            <h3>Back end developer</h3>
+            <p>I build the servers, databases and APIs behind the screen, and keep them quick and secure as usage grows.</p>
           </div>
-          <div class="work-body">
-            <div class="work-top"><span class="work-icon"><svg class="ico" aria-hidden="true"><use href="#i-layout"/></svg></span></div>
-            <h3>Front End Developer</h3>
-            <p>Fast, responsive interfaces built with clean, accessible code.</p>
-          </div>
-        </article>
-        <article class="work-card glass reveal d1 tilt">
-          <div class="work-img">
-            <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Terminal deploying to a stack of servers">
+          <div class="art"><svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Terminal deploying to a stack of servers">
               <rect width="480" height="270" fill="currentColor" fill-opacity=".04"/>
               <rect x="28" y="34" width="250" height="190" rx="14" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-opacity=".16"/>
               <circle cx="48" cy="54" r="5" fill="#ff5f57"/><circle cx="66" cy="54" r="5" fill="#febc2e"/><circle cx="84" cy="54" r="5" fill="#28c840"/>
@@ -576,17 +401,14 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
               <circle cx="340" cy="205" r="4.5" fill="#22c55e"/>
               <rect x="358" y="198" width="72" height="7" rx="3.5" fill="currentColor" fill-opacity=".32"/>
               <rect x="358" y="211" width="46" height="7" rx="3.5" fill="currentColor" fill-opacity=".16"/>
-            </svg>
+            </svg></div>
+        </li>
+        <li class="role">
+          <div>
+            <h3>AI and ML architect</h3>
+            <p>I design how a system fits together and add machine learning where it genuinely helps, from planning the data to putting the model live.</p>
           </div>
-          <div class="work-body">
-            <div class="work-top"><span class="work-icon"><svg class="ico" aria-hidden="true"><use href="#i-server"/></svg></span></div>
-            <h3>Back End Developer</h3>
-            <p>Reliable APIs, databases and server logic that stay fast and secure as you scale.</p>
-          </div>
-        </article>
-        <article class="work-card glass reveal d2 tilt">
-          <div class="work-img">
-            <svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Neural network diagram">
+          <div class="art"><svg viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Neural network diagram">
               <rect width="480" height="270" fill="currentColor" fill-opacity=".04"/>
               <line x1="80" y1="70" x2="190" y2="50" stroke="#4D7CFE" stroke-opacity=".7" stroke-width="1.6"/>
               <line x1="80" y1="70" x2="190" y2="105" stroke="currentColor" stroke-opacity=".12" stroke-width="1"/>
@@ -637,95 +459,61 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
               <circle cx="300" cy="215" r="10" fill="currentColor" fill-opacity=".08" stroke="currentColor" stroke-opacity=".32"/>
               <circle cx="410" cy="100" r="17" fill="#4D7CFE" fill-opacity=".18"/><circle cx="410" cy="100" r="11" fill="#4D7CFE"/>
               <circle cx="410" cy="170" r="10" fill="currentColor" fill-opacity=".08" stroke="currentColor" stroke-opacity=".32"/>
-            </svg>
-          </div>
-          <div class="work-body">
-            <div class="work-top"><span class="work-icon"><svg class="ico" aria-hidden="true"><use href="#i-cpu"/></svg></span></div>
-            <h3>AI &amp; ML Architect</h3>
-            <p>System design and applied machine learning, from scalable architecture to models that learn from your data.</p>
-          </div>
-        </article>
+            </svg></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="wrap split">
+      <h2>How a project goes</h2>
+      <div>
+        <p class="lede">Writing code is only part of the job. This is the whole path from idea to launch.</p>
+        <ol class="steps">
+          <li><h3>Understand</h3><p>We talk through who it's for and what it needs to achieve. I write that down so we agree before I start.</p></li>
+          <li><h3>Build</h3><p>I build in small pieces you can see and test, with clean code the next developer can pick up.</p></li>
+          <li><h3>Test and secure</h3><p>I test it, check security and fix problems before anyone else sees them.</p></li>
+          <li><h3>Launch</h3><p>I put it online, set up automatic updates and stay available for fixes and changes.</p></li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <!-- ============ WHY ME ============ -->
   <section class="section" id="why">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="kicker">Why Choose Me</div>
-        <h2>Why work with me</h2>
-      </div>
-      <div class="grid-3">
-        <article class="info-card glass reveal">
-          <div class="info-top"><span class="work-icon"><svg class="ico" aria-hidden="true"><use href="#i-message"/></svg></span></div>
-          <h3>Clear communication</h3>
-          <p>Plain-language updates, no jargon. You always know what is done, what is next and what I need from you.</p>
-        </article>
-        <article class="info-card glass reveal d1">
-          <div class="info-top"><span class="work-icon"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span></div>
-          <h3>Honest timelines</h3>
-          <p>I scope clearly, quote fairly and tell you early if something changes — no surprises.</p>
-        </article>
-        <article class="info-card glass reveal d2">
-          <div class="info-top"><span class="work-icon"><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg></span></div>
-          <h3>Support after launch</h3>
-          <p>I do not disappear at handover. Fixes, tweaks and improvements continue as your product grows.</p>
-        </article>
-      </div>
+    <div class="wrap split">
+      <h2>Why work with me</h2>
+      <ul class="reasons">
+        <li><h3>You always know where things stand</h3><p>Short, plain updates: what's done, what's next and what I need from you.</p></li>
+        <li><h3>Honest timelines and prices</h3><p>I scope the work clearly, quote fairly and tell you early if something changes.</p></li>
+        <li><h3>I stay after launch</h3><p>Fixes, small changes and new ideas don't end at handover.</p></li>
+      </ul>
     </div>
   </section>
 
-  <!-- ============ CERTIFICATE ============ -->
   <section class="section" id="certificates">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="kicker">Certificates</div>
-        <h2>Always learning, always building.</h2>
-      </div>
+    <div class="wrap split">
+      <h2>Certificates</h2>
       <!-- TODO: replace the course name and link with your exact Udemy certificate -->
-      <div class="cert-card glass reveal">
-        <div class="cert-media" aria-hidden="true">
-          <svg viewBox="0 0 300 340" preserveAspectRatio="xMidYMid slice">
-            <rect x="1" y="1" width="298" height="338" rx="18" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-opacity=".14"/>
-            <rect x="28" y="34" width="110" height="12" rx="6" fill="currentColor" fill-opacity=".55"/>
-            <rect x="28" y="56" width="70" height="9" rx="4.5" fill="currentColor" fill-opacity=".3"/>
-            <rect x="28" y="96" width="244" height="8" rx="4" fill="currentColor" fill-opacity=".18"/>
-            <rect x="28" y="114" width="244" height="8" rx="4" fill="currentColor" fill-opacity=".18"/>
-            <rect x="28" y="132" width="180" height="8" rx="4" fill="currentColor" fill-opacity=".18"/>
-            <circle cx="150" cy="210" r="52" fill="rgba(77,124,254,.16)" stroke="#4D7CFE" stroke-width="2"/>
-            <circle cx="150" cy="210" r="38" fill="none" stroke="#4D7CFE" stroke-width="1.5" stroke-dasharray="4 5"/>
-            <path d="M132 210l13 13 24-26" fill="none" stroke="#4D7CFE" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M132 256L118 296l32-16 32 16-14-40" fill="rgba(77,124,254,.5)"/>
-            <path d="M28 300q14-18 28 0t28 0 28 0" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="2" stroke-linecap="round"/>
-            <rect x="220" y="298" width="52" height="7" rx="3.5" fill="currentColor" fill-opacity=".25"/>
-          </svg>
+      <div class="cert">
+        <div>
+          <h3>Full-Stack Web Development Bootcamp</h3>
+          <p>Udemy. Completed the full course covering front end, back end, databases and deployment.</p>
         </div>
-        <div class="cert-content">
-          <div class="cert-top">
-            <div>
-              <div class="cert-issuer">UDEMY</div>
-              <h3>Full-Stack Web Development Bootcamp</h3>
-            </div>
-            <span class="cert-badge"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Completed</span>
-          </div>
-          <p>Completed the full course covering front end, back end, databases and deployment.</p>
-          <a class="cert-link" href="https://www.udemy.com" target="_blank" rel="noopener">View certificate <svg class="ico ico-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
+        <a class="link" href="https://www.udemy.com" target="_blank" rel="noopener">View certificate</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ CONTACT ============ -->
-  <section class="section contact-section" id="contact">
+  <section class="section contact-wrap" id="contact">
     <div class="wrap">
-      <div class="contact glass reveal">
-        <h2 class="smile-mark">Let's build something great.</h2>
-        <p>Have a project in mind? Book a quick meeting and let's talk it through.</p>
+      <div class="contact glass">
+        <h2>Let's talk.</h2>
+        <p>Have a project in mind? Book a meeting and we'll go through it together.</p>
         <div class="contact-cta">
-          <!-- Swap this link for your Calendly / Cal.com / Google Calendar booking page whenever you have one -->
-          <a href="https://wa.me/2347011690016?text=Hi%20Juwon%2C%20I%27d%20like%20to%20book%20a%20meeting." target="_blank" rel="noopener" class="btn"><svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg> Book a meeting</a>
-          <a href="https://t.me/smiles_pixels" target="_blank" rel="noopener" class="btn btn-ghost"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg> Message on Telegram</a>
+          <!-- Swap this for your Calendly / Cal.com / Google Calendar link when you have one -->
+          <a class="btn" href="https://wa.me/2347011690016?text=Hi%20Juwon%2C%20I%27d%20like%20to%20book%20a%20meeting." target="_blank" rel="noopener">Book a meeting</a>
+          <a class="btn ghost" href="https://t.me/smiles_pixels" target="_blank" rel="noopener">Message on Telegram</a>
         </div>
       </div>
     </div>
@@ -733,19 +521,18 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
 
 </main>
 
-<!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap footer-row">
     <div>
-      <div class="logo">Smiles <span>Pixels</span></div>
-      <div class="footer-note">© <span id="year"></span> Smiles Pixels. All rights reserved.</div>
+      <div class="logo">Smiles Pixels</div>
+      <div class="footer-note">© <span id="year"></span> Smiles Pixels</div>
     </div>
     <div class="footer-social">
-      <a class="glass" href="https://www.facebook.com/profile.php?id=61588944415207" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico" aria-hidden="true"><use href="#i-facebook"/></svg></a>
-      <a class="glass" href="https://www.instagram.com/smiles_pixels" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></a>
-      <a class="glass" href="https://x.com/smiles_pixels" target="_blank" rel="noopener" aria-label="X"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></a>
-      <a class="glass" href="https://t.me/smiles_pixels" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg></a>
-      <a class="glass" href="https://wa.me/2347011690016" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+      <a href="https://www.facebook.com/profile.php?id=61588944415207" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+      <a href="https://www.instagram.com/smiles_pixels" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+      <a href="https://x.com/smiles_pixels" target="_blank" rel="noopener" aria-label="X"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></a>
+      <a href="https://t.me/smiles_pixels" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg></a>
+      <a href="https://wa.me/2347011690016" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
     </div>
   </div>
 </footer>
@@ -759,23 +546,10 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer  = matchMedia('(hover:hover) and (pointer:fine)').matches;
-  const once = (selector, options, callback) => {          // run callback once when an element first enters view
-    const io = new IntersectionObserver(entries => entries.forEach(e => {
-      if (e.isIntersecting) { callback(e.target); io.unobserve(e.target); }
-    }), options);
-    $$(selector).forEach(el => io.observe(el));
-  };
 
   $('#year').textContent = new Date().getFullYear();
 
-  /* ---------- reveal on scroll ---------- */
-  once('.reveal', { threshold: .15 }, el => {
-    el.classList.add('is-visible');
-    setTimeout(() => el.classList.remove('reveal', 'is-visible', 'd1', 'd2'), 1000);   // hand back to hover styles
-  });
-  once('.work-card', { threshold: .2 }, el => el.classList.add('seen'));               // artwork settles in once
-
-  /* ---------- mobile menu ---------- */
+  /* ---- mobile menu ---- */
   const burger = $('#burger'), menu = $('#navLinks');
   const setMenu = open => {
     menu.classList.toggle('open', open);
@@ -784,27 +558,27 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
   };
   burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
   $$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
-  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); burger.focus(); } });
   addEventListener('resize', () => { if (innerWidth > 860) setMenu(false); });
 
-  /* ---------- scrollspy ---------- */
+  /* ---- highlight the section in view ---- */
   const links = $$('.nav-links a[href^="#"]');
   const spy = new IntersectionObserver(entries => entries.forEach(e => {
     if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
   }), { rootMargin: '-40% 0px -50% 0px' });
   links.forEach(l => { const s = $(l.getAttribute('href')); if (s) spy.observe(s); });
 
-  /* ---------- light / dark theme ---------- */
+  /* ---- light / dark ---- */
   const root = document.documentElement, themeBtn = $('#themeToggle'), themeMeta = $('meta[name="theme-color"]');
   const paint = (theme, save) => {
     root.dataset.theme = theme;
     themeBtn.setAttribute('aria-pressed', theme === 'dark');
     themeBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-    themeMeta.content = theme === 'dark' ? '#000000' : '#F6F5F1';
+    themeMeta.content = theme === 'dark' ? '#000000' : '#F3F5F8';
     if (save) { try { localStorage.setItem('theme', theme); } catch (e) {} }
   };
   paint(root.dataset.theme === 'dark' ? 'dark' : 'light', false);
-  const device = matchMedia('(prefers-color-scheme: dark)');   // follow the device until the visitor chooses
+  const device = matchMedia('(prefers-color-scheme: dark)');          // follow the device until the visitor chooses
   if (device.addEventListener) device.addEventListener('change', e => {
     let saved = null;
     try { saved = localStorage.getItem('theme'); } catch (err) {}
@@ -813,7 +587,7 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
   themeBtn.addEventListener('click', () => {
     const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
     if (reduceMotion) return paint(next, true);
-    if (!document.startViewTransition) {                       // fallback: cross-fade every colour
+    if (!document.startViewTransition) {
       root.classList.add('theme-anim');
       paint(next, true);
       return setTimeout(() => root.classList.remove('theme-anim'), 700);
@@ -828,58 +602,20 @@ footer{margin-top:clamp(28px,4vw,44px); padding:32px 0 calc(28px + env(safe-area
     ).catch(() => {});
   });
 
-  if (reduceMotion) return;                                    // everything below is motion-only
-
-  /* ---------- rotating word ---------- */
-  const rotator = $('#rotator');
-  const words = ['web interfaces', 'scalable back ends', 'intelligent systems', 'clean code'];
-  let w = 0, c = words[0].length, deleting = true;
-  (function type() {
-    const word = words[w];
-    rotator.textContent = word.slice(0, c);
-    let delay = deleting ? 45 : 85;
-    if (!deleting && c === word.length) { delay = 1800; deleting = true; }
-    else if (deleting && c === 0)       { deleting = false; w = (w + 1) % words.length; delay = 350; }
-    c += deleting ? -1 : 1;
-    setTimeout(type, delay);
-  })();
-
-  /* ---------- desktop card tilt (frame-throttled, transform only) ---------- */
-  if (!finePointer) return;
-  $$('.tilt').forEach(card => {
-    const art = $('.work-img', card);
-    let raf = 0, last = null;
-    const frame = () => {
-      raf = 0;
-      const r = card.getBoundingClientRect();
-      const px = (last.clientX - r.left) / r.width - .5, py = (last.clientY - r.top) / r.height - .5;
-      card.style.transform = `perspective(800px) translateY(-6px) rotateX(${py * -7}deg) rotateY(${px * 9}deg)`;
-      if (art) { art.style.setProperty('--ix', (px * -8).toFixed(1) + 'px'); art.style.setProperty('--iy', (py * -6).toFixed(1) + 'px'); }
-    };
-    card.addEventListener('mouseenter', () => { card.style.transition = 'transform .12s ease-out, border-color .3s, background .3s'; });
-    card.addEventListener('mousemove', e => { last = e; if (!raf) raf = requestAnimationFrame(frame); });
-    card.addEventListener('mouseleave', () => {
-      cancelAnimationFrame(raf); raf = 0;
-      card.style.transition = 'transform .5s cubic-bezier(.22,.9,.32,1), border-color .3s, background .3s';
-      card.style.transform = '';
-      if (art) { art.style.setProperty('--ix', '0px'); art.style.setProperty('--iy', '0px'); }
-      setTimeout(() => { card.style.transition = ''; }, 500);
-    });
-  });
-
-  /* ---------- profile depth: the cutout and the chips drift against each other ---------- */
+  /* ---- the one playful moment: the cutout and the tiles drift against each other ---- */
+  if (reduceMotion || !finePointer) return;
   const prof = $('#profile');
-  let praf = 0, plast = null;
+  let raf = 0, last = null;
   const drift = () => {
-    praf = 0;
+    raf = 0;
     const r = prof.getBoundingClientRect();
-    const px = (plast.clientX - r.left) / r.width - .5, py = (plast.clientY - r.top) / r.height - .5;
+    const px = (last.clientX - r.left) / r.width - .5, py = (last.clientY - r.top) / r.height - .5;
     prof.style.setProperty('--fx', (px * 10).toFixed(1) + 'px');  prof.style.setProperty('--fy', (py * 8).toFixed(1) + 'px');
     prof.style.setProperty('--cx', (px * -16).toFixed(1) + 'px'); prof.style.setProperty('--cy', (py * -12).toFixed(1) + 'px');
   };
-  prof.addEventListener('mousemove', e => { plast = e; if (!praf) praf = requestAnimationFrame(drift); });
+  prof.addEventListener('mousemove', e => { last = e; if (!raf) raf = requestAnimationFrame(drift); });
   prof.addEventListener('mouseleave', () => {
-    cancelAnimationFrame(praf); praf = 0;
+    cancelAnimationFrame(raf); raf = 0;
     ['--fx', '--fy', '--cx', '--cy'].forEach(p => prof.style.setProperty(p, '0px'));
   });
 })();
