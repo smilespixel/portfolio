@@ -18,13 +18,13 @@
 <link rel="preload" as="image" href="profile.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
 <script>(function(){var d=document.documentElement,t=null;d.classList.add("js");try{t=localStorage.getItem("theme")}catch(e){}if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.dataset.theme=t})();</script>
 <style>
 /* PALETTE (60/30/10): neutrals tinted toward the brand blue = 60 · ink = 30 · one blue accent = 10.
    Amber is the complement of blue, used in two places only (logo dot, text selection). No purple, no cyan, no gradients. */
-:root{color-scheme:light;--bg-rgb:244,245,248;--ink-rgb:16,19,26;--ac-rgb:43,80,230;--bg:rgb(var(--bg-rgb));--ink:rgb(var(--ink-rgb));--ac:rgb(var(--ac-rgb));--on:#fff;--amber:#E8A317;--muted:rgba(var(--ink-rgb),.74);--faint:rgba(var(--ink-rgb),.62);--line:rgba(var(--ink-rgb),.13);--glass:rgba(255,255,255,.7);--tint:rgba(var(--ac-rgb),.07);--r:24px;--pad:clamp(20px,5vw,40px);--gap:clamp(72px,11vw,132px);--ease:cubic-bezier(.16,1,.3,1)}
-[data-theme="dark"]{color-scheme:dark;--bg-rgb:0,0,0;--ink-rgb:242,242,238;--ac-rgb:124,155,255;--on:#050A1C;--glass:rgba(255,255,255,.07);--line:rgba(255,255,255,.15);--tint:rgba(var(--ac-rgb),.1)}
+:root{color-scheme:light;--bg-rgb:244,245,248;--ink-rgb:14,26,58;--navy:#0E1A3A;--ac-rgb:43,80,230;--bg:rgb(var(--bg-rgb));--ink:rgb(var(--ink-rgb));--ac:rgb(var(--ac-rgb));--on:#fff;--amber:#E8A317;--muted:rgba(var(--ink-rgb),.74);--faint:rgba(var(--ink-rgb),.62);--line:rgba(var(--ink-rgb),.13);--glass:rgba(255,255,255,.7);--tint:rgba(var(--ac-rgb),.07);--r:24px;--pad:clamp(20px,5vw,40px);--gap:clamp(72px,11vw,132px);--ease:cubic-bezier(.16,1,.3,1)}
+[data-theme="dark"]{color-scheme:dark;--navy:#0C1636;--bg-rgb:0,0,0;--ink-rgb:242,242,238;--ac-rgb:124,155,255;--on:#050A1C;--glass:rgba(255,255,255,.07);--line:rgba(255,255,255,.15);--tint:rgba(var(--ac-rgb),.1)}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 body{margin:0;overflow-x:clip;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 'Bricolage Grotesque',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -66,8 +66,6 @@ nav{height:60px;padding-inline:22px;display:flex;align-items:center;gap:16px}
 .avatar-svg,.profile-photo{height:auto;max-height:100%;object-fit:contain;object-position:bottom}.avatar-svg{width:86%}.profile-photo{display:none;width:100%}
 .profile.has-photo .profile-photo{display:block}.profile.has-photo .avatar-svg{display:none}
 .profile-id{position:absolute;inset:auto 12px 12px;padding:12px 18px;border-radius:16px}.profile-id strong{display:block;font-size:1.1rem;letter-spacing:-.02em;line-height:1.25}.profile-id span{font-size:.93rem;color:var(--muted)}
-.meta{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(36px,6vw,64px);border-top:1px solid var(--line)}
-.meta div{padding:16px 20px 0 0;font-size:.95rem;color:var(--muted)}.meta b{display:block;margin-bottom:2px;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
 /* sections: small sticky label left, content right */
 .section{padding-block:var(--gap);border-top:1px solid var(--line);scroll-margin-top:80px}
 .split{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:clamp(20px,4vw,64px);align-items:start}
@@ -88,10 +86,8 @@ nav{height:60px;padding-inline:22px;display:flex;align-items:center;gap:16px}
 .cert{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding-block:22px;border-block:1px solid var(--line)}.cert h3{font-size:1.3rem}.cert p{margin-top:2px;max-width:50ch;color:var(--muted)}
 /* contact: the one solid block of the accent colour */
 .contact-sec{padding:var(--gap) 0 clamp(48px,7vw,80px);border-top:1px solid var(--line)}
-.contact{display:grid;gap:14px;justify-items:start;padding:clamp(32px,6vw,72px);border-radius:var(--r);background:var(--ac);color:var(--on)}
+.contact{display:grid;gap:14px;justify-items:start;padding:clamp(32px,6vw,72px);border-radius:var(--r);background:radial-gradient(60% 90% at 100% 100%,rgba(var(--ac-rgb),.38),transparent 70%),var(--navy);color:#fff}
 .contact h2{font-size:clamp(2.8rem,1rem + 8.4vw,8rem);letter-spacing:-.055em;line-height:.9}.contact p{max-width:42ch;font-size:1.19rem;opacity:.9}
-.contact .btn{background:var(--on);color:var(--ac)}.contact .btn:hover{background:var(--bg);color:var(--ink)}.contact .btn.ghost{background:none;color:var(--on);border-color:rgba(255,255,255,.4)}.contact .btn.ghost:hover{background:var(--on);color:var(--ac)}
-[data-theme="dark"] .contact .btn.ghost{border-color:rgba(5,10,28,.4)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
 footer{padding:0 0 calc(32px + env(safe-area-inset-bottom,0px))}
 .frow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}.fnote{font-size:.92rem;color:var(--faint)}
@@ -104,15 +100,10 @@ footer{padding:0 0 calc(32px + env(safe-area-inset-bottom,0px))}
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}::view-transition-new(root){z-index:9999}
 .theme-anim,.theme-anim *{transition:background-color .5s,color .5s,border-color .5s!important}
 @media (max-width:860px){
-.burger{display:grid}.nav-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:0;padding:4px 22px 10px;border-radius:var(--r);background:rgba(var(--bg-rgb),.97);border:1px solid var(--line)}.nav-links.open{display:flex}.nav-links a{padding:15px 0;border-bottom:1px solid var(--line)}.nav-links a:last-child{border:0}.nav-links a::after{display:none}
+.burger{display:flex}.nav-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:0;padding:4px 22px 10px;border-radius:var(--r);background:rgba(var(--bg-rgb),.97);border:1px solid var(--line)}.nav-links.open{display:flex}.nav-links a{padding:15px 0;border-bottom:1px solid var(--line)}.nav-links a:last-child{border:0}.nav-links a::after{display:none}
 .hero-grid{grid-template-columns:1fr}.profile{justify-self:start;max-width:300px;order:-1}.split{grid-template-columns:1fr}.label{position:static}
-.fe,.ml,.be{grid-column:1/-1}.ml{grid-row:auto}.meta{grid-template-columns:1fr}.meta div{padding-bottom:12px;border-bottom:1px solid var(--line)}}
+.fe,.ml,.be{grid-column:1/-1}.ml{grid-row:auto}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}.js .w>span,.js .rv{translate:0 0;opacity:1}.sw{opacity:1}}
-/* TYPE: Bricolage Grotesque for voice, Instrument Serif italic for a single expressive accent per block, system mono for labels (an engineer's cue, zero download) */
-:root{--serif:'Instrument Serif',Georgia,serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-.hero h1 .name,.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}.hero h1 .name{font-size:1.14em;color:var(--ac)}
-.label,.meta b,.idx{font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}.idx{color:var(--ac)}
-.label::before{content:"";display:inline-block;width:8px;height:8px;margin-right:10px;border-radius:2px;background:var(--ac)}
 /* WORK: bento. Each cell leads with a live illustration, one line of text underneath. */
 .bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
 .cell{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:var(--r);background:var(--glass);transition:border-color .35s,translate .5s var(--ease)}.cell:hover{border-color:var(--ac);translate:0 -4px}
@@ -128,20 +119,26 @@ footer{padding:0 0 calc(32px + env(safe-area-inset-bottom,0px))}
 /* WHY: three short statements, set as type */
 .lines li{padding-block:clamp(18px,3.5vh,34px)}.lines h3{font-size:clamp(2.2rem,1rem + 5.4vw,5.2rem);line-height:.98;letter-spacing:-.045em;font-weight:700}.lines h3 .serif{color:var(--ac);font-size:1.1em}
 .steps p{font-size:1.1rem}
-/* SYSTEM: numbered sections, one filled CTA in the nav, connectors between sections, credentials as proof, process recap in contact */
+/* SYSTEM: numbered sections, one filled CTA in the nav, connectors between sections, credentials as proof */
 :root{--faint:rgba(var(--ink-rgb),.68)}html{scroll-padding-top:84px}body{font-optical-sizing:auto;font-kerning:normal;counter-reset:sec}
-.mono{font-family:var(--mono);font-size:.82rem;letter-spacing:.04em;color:var(--faint)}
 .label{counter-increment:sec}.label::before{content:counter(sec,decimal-leading-zero) " /";width:auto;height:auto;margin-right:8px;border-radius:0;background:none;color:var(--ac)}
-.meta a{padding:16px 20px 0 0;font-size:.95rem;color:var(--muted);transition:color .2s}.meta a:hover{color:var(--ink)}.meta a b{transition:color .2s}.meta a:hover b{color:var(--ac)}
 @media (min-width:861px){.nav-links a[href="#contact"]{padding:9px 20px;border-radius:99px;background:var(--ink);color:var(--bg);transition:background .25s,color .25s}.nav-links a[href="#contact"]:hover{background:var(--ac);color:var(--on)}.nav-links a[href="#contact"]::after{display:none}}
 .nexts{display:flex;justify-content:flex-end;margin-top:clamp(32px,5vw,56px)}
 .next{display:inline-flex;align-items:center;gap:14px;min-height:44px;font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}.next b{font-weight:600;color:var(--ink)}
 .next i{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;font-style:normal;font-size:1rem;transition:background .25s,color .25s,border-color .25s,translate .35s var(--ease)}.next:hover i{background:var(--ac);border-color:var(--ac);color:var(--on);translate:0 4px}
 .cred{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px 28px;align-items:center;padding:26px;border:1px solid var(--line);border-radius:var(--r);background:var(--glass)}.cred h3{font-size:1.4rem;margin-bottom:4px}.seal{width:64px;height:64px;color:var(--ink)}
-.recap{display:flex;flex-wrap:wrap;gap:8px 6px;margin:6px 0 0;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}.recap li{display:flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid currentColor;border-radius:99px;opacity:.85}.recap li+li::before{content:"→";margin-right:2px;opacity:.7}
-@media (max-width:860px){.meta a{padding-bottom:12px;border-bottom:1px solid var(--line)}}
 @media (max-width:860px){.tools{margin-left:auto}}
 @media (max-width:640px){.cred{grid-template-columns:auto minmax(0,1fr)}.cred .link{grid-column:1/-1}.nexts{justify-content:flex-start}}
+/* TYPE: bold Bricolage Grotesque throughout; the accent colour does the emphasis */
+.hero h1 .name,.serif{color:var(--ac)}
+.label{font-size:1rem;font-weight:700;color:var(--faint)}.label::before{content:counter(sec,decimal-leading-zero) " /";margin-right:8px;color:var(--ac)}
+.idx{font-size:.95rem;font-weight:800;color:var(--ac)}.cred p{color:var(--muted)}
+.next{font-size:.95rem;font-weight:600;letter-spacing:0;text-transform:none}.next b{font-weight:760}
+/* BURGER: a bordered circle that matches the theme toggle; the lines sit together and cross into an X */
+.burger{border:1px solid var(--line);flex-direction:column;align-items:center;justify-content:center;gap:5px}
+/* COLOUR 60/30/10: 60% paper (backgrounds) · 30% navy (text, buttons, contact block) · 10% blue (name, links, highlights, primary CTA in the contact block) */
+.contact .btn{background:var(--ac);color:var(--on)}.contact .btn:hover{background:#fff;color:var(--navy)}
+.contact .btn.ghost{background:none;color:#fff;border-color:rgba(255,255,255,.4)}.contact .btn.ghost:hover{background:#fff;color:var(--navy);border-color:#fff}
 </style>
 </head>
 <body>
@@ -180,7 +177,6 @@ footer{padding:0 0 calc(32px + env(safe-area-inset-bottom,0px))}
 <img class="profile-photo" src="profile.webp" alt="Portrait of Juwon Adedeji" width="640" height="702" fetchpriority="high" decoding="async" onload="this.closest('.profile').classList.add('has-photo')">
 </div><div class="profile-id glass"><strong>Juwon Adedeji</strong><span>Software engineer, Nigeria</span></div></div>
 </div></div>
-<dl class="meta rv" style="--d:6;margin-bottom:0"><div><b>Based in</b>Nigeria</div><a href="#work"><b>Focus</b>Front end, back end, AI and ML</a><a href="#contact"><b>Reach me on</b>WhatsApp or Telegram</a></dl>
 </div></section>
 
 <section class="section" id="about"><div class="wrap split">
@@ -224,7 +220,6 @@ footer{padding:0 0 calc(32px + env(safe-area-inset-bottom,0px))}
 <div class="contact rv">
 <h2 data-split>Let's talk.</h2>
 <p>Have a project in mind? Book a meeting and we'll go through it together.</p>
-<ol class="recap" aria-label="How we would work together"><li>Understand</li><li>Build</li><li>Test and secure</li><li>Launch</li></ol>
 <div class="cta"><a class="btn" href="https://wa.me/2347011690016?text=Hi%20Juwon%2C%20I%27d%20like%20to%20book%20a%20meeting." target="_blank" rel="noopener">Book a meeting</a><a class="btn ghost" href="https://t.me/smiles_pixels" target="_blank" rel="noopener">Message on Telegram</a></div>
 </div></div></section>
 </main>
